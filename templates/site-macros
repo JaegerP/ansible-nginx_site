@@ -73,7 +73,7 @@ server {
 
     {# Tuning #}
     {% if site_tuning is mapping %}
-    {% for key, value in site_tuning.iteritems() %}
+    {% for key, value in site_tuning.items() %}
     {{ key }} {{ value }};
     {% endfor %}
     {% endif %}
@@ -85,7 +85,7 @@ server {
     {% endif %}
 
     {% if site_location_rules is mapping %}
-    {% for l, r in site_location_rules.iteritems() %}
+    {% for l, r in site_location_rules.items() %}
     {{ location(l, r) }}
     {% endfor %}
     {% endif %}

@@ -6,11 +6,11 @@
     state: directory
   with_items:
   - '{{ localbase }}/etc/nginx/sites-available'
-  - '{{ localbase }}/etc/nginx/sites-enabled'
+  - '{{ localbase }}/etc/nginx/sites-enabled' 
 
 - name: Install site
   template:
-    src: site.conf
+    src: templates/site.conf
     dest: '{{ localbase }}/etc/nginx/sites-available/{{ nginx_site_name }}.conf'
   notify: reload nginx
 
